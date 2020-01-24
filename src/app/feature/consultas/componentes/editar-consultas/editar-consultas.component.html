@@ -1,0 +1,56 @@
+<div class="card bg-light">
+    <div class="card-header"><h2>{{ titulo }}  {{consultaAbogado.nombre }}</h2></div>
+    <div class="card-body">
+        <form>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="nombre" class="">Nombre Cliente:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="consultaAbogado.nombre">
+                </div>
+                <div class="col-sm-6">
+                    <label for="identificacion" class="">Cedula Cliente:</label>
+                    <input type="text" class="form-control" id="identificacion" name="identificacion" [(ngModel)]="consultaAbogado.identificacion">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="celular" class="">Celular Cliente:</label>
+                    <input type="text" class="form-control" id="celular" name="celular" [(ngModel)]="consultaAbogado.celular" >
+                </div>
+                <div class="col-sm-4">
+                    <label for="tipoConsultoria" class=""> Tipo Consulta:</label>
+                    <select class="form-control" name="tipoConsultoria" id="tipoConsultoria">
+                        <option value="1">PENAL</option>
+                        <option value="2">FAMILIAR</option>
+                        <option value="3">ECONOMICA</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <label for="fechaConsulta" class="">Fecha Consulta Cliente:</label>
+                    <input type="date"  class="form-control" id="fechaConsulta" name="fechaConsulta" [(ngModel)]="consultaAbogado.fechaConsulta">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="estado" class=""> Estado Consulta:</label>
+                    <select class="form-control" name="estado" id="estado">
+                        <option value="1">PENAL</option>
+                        <option value="2">FAMILIAR</option>
+                        <option value="3">ECONOMICA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <button class="btn btn-primary form-control" role="button">Crear</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-danger form-control" type="button" [routerLink]="['/listar']" >
+                        Volver
+                    </button>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

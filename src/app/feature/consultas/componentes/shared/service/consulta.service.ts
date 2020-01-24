@@ -16,13 +16,13 @@ export class ConsultaService {
     private http: HttpClient
   ) { }
 
-  public getListarConsultasAbogados() {
-    return this.doGet<Consulta[]>('http://localhost:9999/api/consulta/abogado');
+  public getListarConsultasAbogados(): Observable<Consulta[]> {
+    return this.http.get(this.url + 'consulta/abogado').pipe(
+      map(response => response as Consulta[])
+    );
   }
 
-  protected doGet<T>(serviceUrl: string): Observable<T> {
-    return this.http.get(serviceUrl).pipe(
-      map(response => response as T )
-    );
-}
+  public getConsultaAbogado(id): Observable<Consulta> {
+    return this.http.get<Consulta>(`${this.url}/consulta/abogado/${id}`);
+  }
 }

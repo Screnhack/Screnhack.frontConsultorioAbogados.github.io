@@ -10,11 +10,12 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>Nombre Proveedor </th>
-                    <th>Fecha Creacion</th>
-                    <th>Telefono</th>
-                    <th>Direccion</th>
+                    <th>Nombre Cliente </th>
+                    <th>Identificacion</th>
+                    <th>Celular</th>
+                    <th>Tipo Consulta</th>
+                    <th>Estado</th>
+                    <th>Fecha Consulta</th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
@@ -28,7 +29,7 @@
                     <td>{{consulta.fechaConsulta  | date: 'dd/MM/yyyy'}}</td>
                     <td colspan="2" class="text-center">
                         <button type="button" name="editar" class="btn btn-primary btn-sm rounded-circle"><i
-                                class="fa fa-pencil"></i></button>
+                                class="fa fa-pencil" [routerLink]="['/edit', consulta.id]"></i></button>
                     </td>
                 </tr>
             </tbody>
