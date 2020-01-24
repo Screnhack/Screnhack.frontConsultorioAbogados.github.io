@@ -1,0 +1,42 @@
+<div class="card mb-3">
+    <div class="card-body text-primary">
+        <h3 class="card-title">{{titulo}}</h3>
+        <div class="my-2 text-right pull-right">
+            &nbsp;
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/consultas/crear']">
+                Crear Consulta
+            </button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre Proveedor </th>
+                    <th>Fecha Creacion</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let consulta of listarConsultas">
+                    <td>{{consulta.nombre}} </td>
+                    <td>{{consulta.identificacion}} </td>
+                    <td>{{consulta.celular}}</td>
+                    <td>{{consulta.tipoConsultoria}}</td>
+                    <td>{{consulta.estado}}</td>
+                    <td>{{consulta.fechaConsulta  | date: 'dd/MM/yyyy'}}</td>
+                    <td colspan="2" class="text-center">
+                        <button type="button" name="editar" class="btn btn-primary btn-sm rounded-circle"><i
+                                class="fa fa-pencil"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="my-2 text-right pull-right">
+            <button class="btn btn-rounded btn-danger" type="button" [routerLink]="['/consultas']">
+                Volver
+            </button>
+        </div>
+    </div>
+</div>
