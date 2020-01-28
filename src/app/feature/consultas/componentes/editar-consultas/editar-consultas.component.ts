@@ -51,7 +51,7 @@ export class EditarConsultasComponent implements OnInit {
               swal.fire({
                 title: 'Actualización de Consulta Abogado Exitosa',
                 icon: "success",
-                timer: 2000,
+                // timer: 2000,
                 showConfirmButton: false
               });
               this.router.navigate(['/consultas/listar']);

@@ -8,9 +8,14 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('Bienvenido Home', async () => {
+  it('Mostrar Mensaje de Bienvenida', async () => {
     await page.navigateTo();
-    expect(page.getTitleText()).toEqual('TENEMOS LOS MEJORES ABOGADOS LABORALES');
+    expect(page.getTitleText()).toEqual('TENEMOS LOS MEJORES');
+  });
+
+  it('Entrar a pantalla de gestion', async () => {
+    await page.navigateTo();
+    page.getBotonGestion().click();
   });
 
   afterEach(async () => {
