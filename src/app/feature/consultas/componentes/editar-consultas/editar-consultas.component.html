@@ -19,10 +19,11 @@
                 </div>
                 <div class="col-sm-4">
                     <label for="tipoConsultoria" class=""> Tipo Consulta:</label>
-                    <select class="form-control" name="tipoConsultoria" id="tipoConsultoria">
-                        <option value="1">PENAL</option>
-                        <option value="2">FAMILIAR</option>
-                        <option value="3">ECONOMICA</option>
+                    <select class="form-control" name="tipoConsultoria" id="tipoConsultoria"  [(ngModel)]="consultaAbogado.tipoConsultoria">
+                        <option disabled selected>Seleccione un tipo ..</option>
+                        <option value="JUDICIAL">JUDICIAL</option>
+                        <option value="FAMILIAR">FAMILIAR</option>
+                        <option value="ECONOMICA">ECONOMICA</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
@@ -33,16 +34,18 @@
             <div class="form-group row">
                 <div class="col-sm-6">
                     <label for="estado" class=""> Estado Consulta:</label>
-                    <select class="form-control" name="estado" id="estado">
-                        <option value="1">PENAL</option>
-                        <option value="2">FAMILIAR</option>
-                        <option value="3">ECONOMICA</option>
+                    <select class="form-control" name="estado" id="estado"  [(ngModel)]="consultaAbogado.estado">
+                        <option disabled selected>Seleccione un estado ..</option>
+                        <option value="PENDIENTE">PENDIENTE</option>
+                        <option value="PAGADA">PAGADA</option>
+                        <option value="REALIZADA">REALIZADA</option>
+                        <option value="CANCELADA">CANCELADA</option>
                     </select>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-2">
-                    <button class="btn btn-primary form-control" role="button">Crear</button>
+                    <button class="btn btn-primary form-control" role="button" (click)="editarConsultaAbogado()">Actualizar</button>
                 </div>
                 <div class="col-sm-2">
                     <button class="btn btn-danger form-control" type="button" [routerLink]="['/listar']" >

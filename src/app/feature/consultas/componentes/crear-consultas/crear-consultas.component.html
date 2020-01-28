@@ -1,44 +1,46 @@
 <div class="card bg-light">
-    <div class="card-header"><h2>{{ titulo }}</h2></div>
+    <div class="card-header"><h2>{{ titulo }}  {{consultaAbogado.nombre }}</h2></div>
     <div class="card-body">
         <form>
             <div class="form-group row">
                 <div class="col-sm-6">
-                    <label for="tp_phone" class="">Nombre Cliente:</label>
-                    <input type="text" maxlength="7" minlength="7" class="form-control" id="" name="tp_phone">
+                    <label for="nombre" class="">Nombre Cliente:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="consultaAbogado.nombre">
                 </div>
                 <div class="col-sm-6">
-                    <label for="tp_phone" class="">Cedula Cliente:</label>
-                    <input type="text" maxlength="7" minlength="7" class="form-control" id="" name="tp_phone">
+                    <label for="identificacion" class="">Identificación Cliente:</label>
+                    <input type="text" class="form-control" id="identificacion" name="identificacion" [(ngModel)]="consultaAbogado.identificacion">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-4">
-                    <label for="tp_phone" class="">Celular Cliente:</label>
-                    <input type="text" maxlength="7" minlength="7" class="form-control" id="" name="tp_phone" >
+                    <label for="celular" class="">Celular Cliente:</label>
+                    <input type="text" class="form-control" id="celular" name="celular" [(ngModel)]="consultaAbogado.celular" >
                 </div>
                 <div class="col-sm-4">
-                    <label for="tp_phone" class=""> Cliente:</label>
-                    <select class="form-control" name="" id="">
-                        <option value="1">PENAL</option>
-                        <option value="2">FAMILIAR</option>
-                        <option value="3">ECONOMICA</option>
+                    <label for="tipoConsultoria" class="">Tipo Consulta:</label>
+                    <select class="form-control" name="tipoConsultoria" id="tipoConsultoria" [(ngModel)]="consultaAbogado.tipoConsultoria">
+                        <option disabled selected>Seleccione un tipo ..</option>
+                        <option value="JUDICIAL">JUDICIAL</option>
+                        <option value="FAMILIAR">FAMILIAR</option>
+                        <option value="ECONOMICA">ECONOMICA</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
-                    <label for="tp_phone" class="">Fecha Consulta Cliente:</label>
-                    <input type="date"  class="form-control" id="" name="tp_phone">
+                    <label for="fechaConsulta" class="">Fecha Consulta Cliente:</label>
+                    <input type="date"  class="form-control" id="fechaConsulta" name="fechaConsulta" [(ngModel)]="consultaAbogado.fechaConsulta">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-2">
-                    <button class="btn btn-primary form-control" role="button"  (click)='create()'>Crear</button>
+                    <button class="btn btn-primary form-control" role="button" (click)="crearConsultaAbogado()">Crear consulta</button>
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-danger form-control" type="button" [routerLink]="['/consultas']">
+                    <button class="btn btn-danger form-control" type="button" [routerLink]="['/listar']" >
                         Volver
                     </button>
                 </div>
+                
             </div>
         </form>
     </div>

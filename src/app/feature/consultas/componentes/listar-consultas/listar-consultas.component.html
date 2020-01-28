@@ -26,10 +26,10 @@
                     <td>{{consulta.celular}}</td>
                     <td>{{consulta.tipoConsultoria}}</td>
                     <td>{{consulta.estado}}</td>
-                    <td>{{consulta.fechaConsulta  | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{consulta.fechaConsulta  | date: 'yyyy-MM-dd'}}</td>
                     <td colspan="2" class="text-center">
-                        <button type="button" name="editar" class="btn btn-primary btn-sm rounded-circle"><i
-                                class="fa fa-pencil" [routerLink]="['/edit', consulta.id]"></i></button>
+                        <button class="btn btn-primary btn-sm rounded-circle" [routerLink]="['/consultas/editar', consulta.id]"><i
+                                class="fa fa-pencil"></i></button>
                     </td>
                 </tr>
             </tbody>

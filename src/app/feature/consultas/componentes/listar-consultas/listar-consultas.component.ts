@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Consulta } from '../shared/model/consulta';
-import { ConsultaService } from '../shared/service/consulta.service';
+import { Consulta } from '../../../../shared/consultas/model/consulta';
+import { ConsultaService } from '../../../../shared/consultas/service/consulta.service';
 
 @Component({
   selector: 'app-listar-consultas',
@@ -18,7 +18,7 @@ export class ListarConsultasComponent implements OnInit {
 
   ngOnInit() {
     this.consultaService.getListarConsultasAbogados().subscribe(
-      consultas => this.listarConsultas = consultas
+      consultas => {this.listarConsultas = consultas}
     );
   }
 

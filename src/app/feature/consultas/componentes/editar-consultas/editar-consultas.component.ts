@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Consulta } from '../shared/model/consulta';
-import { ConsultaService } from '../shared/service/consulta.service';
+import { Consulta } from '../../../../shared/consultas/model/consulta';
+import { ConsultaService } from '../../../../shared/consultas/service/consulta.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-consultas',
@@ -31,6 +32,41 @@ export class EditarConsultasComponent implements OnInit {
         )
       }
     )
+  }
+
+
+  public editarConsultaAbogado(): void {
+
+    swal.fire({
+      title: 'Esta Seguro de Actualizar la Consulta?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+    }).then((resultado) => {
+      if (resultado.value) {
+        this.consultaService.putCrearConsultaAbogado(this.consultaAbogado).subscribe(
+          response => {
+            if (response != null) {
+              swal.fire({
+                title: 'Actualización de Consulta Abogado Exitosa',
+                icon: "success",
+                timer: 2000,
+                showConfirmButton: false
+              });
+              this.router.navigate(['/consultas/listar']);
+            }
+          },
+          error => {
+            swal.fire({
+              title: 'Error: ' + error.error.mensaje,
+              icon: 'warning',
+              timer: 2000,
+              showConfirmButton: false
+            });
+          });
+      }
+    })
   }
 
 }

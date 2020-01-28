@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('frontConsultorioAbogados app is running!');
+  it('Bienvenido Home', async () => {
+    await page.navigateTo();
+    expect(page.getTitleText()).toEqual('TENEMOS LOS MEJORES ABOGADOS LABORALES');
   });
 
   afterEach(async () => {

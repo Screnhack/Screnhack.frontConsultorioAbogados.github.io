@@ -5,6 +5,6 @@ export class Consulta {
     identificacion: string;
     celular: string;
     tipoConsultoria: string;
-    estado: string;
-    fechaConsulta: string;
+    estado: string = 'PENDIENTE';
+    fechaConsulta: Date;
 }

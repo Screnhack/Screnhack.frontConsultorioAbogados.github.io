@@ -17,12 +17,21 @@ export class ConsultaService {
   ) { }
 
   public getListarConsultasAbogados(): Observable<Consulta[]> {
-    return this.http.get(this.url + 'consulta/abogado').pipe(
+    return this.http.get(`${environment.url}consulta/abogado`).pipe(
       map(response => response as Consulta[])
     );
   }
 
   public getConsultaAbogado(id): Observable<Consulta> {
-    return this.http.get<Consulta>(`${this.url}/consulta/abogado/${id}`);
+    return this.http.get<Consulta>(`${environment.url}consulta/abogado/${id}`);
+  }
+
+  public postCrearConsultaAbogado(consulta: Consulta): Observable<Consulta> {
+    return this.http.post<Consulta>(`${environment.url}comando/abogado`, consulta, { headers: this.httpHeaders });
+  }
+
+  public putCrearConsultaAbogado(consulta: Consulta): Observable<Consulta> {
+    console.log("llego a actualizar");
+    return this.http.put<Consulta>(`${environment.url}comando/abogado`, consulta, { headers: this.httpHeaders });
   }
 }
