@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('Mostrar Mensaje de Bienvenida', async () => {
     await page.navigateTo();
-    expect(page.getTitleText()).toEqual('TENEMOS LOS MEJORES');
+    expect(page.getTitleText()).toEqual('Bienvenidos a Consultoría ADN-Abogados');
   });
 
   it('Entrar a pantalla de gestion', async () => {

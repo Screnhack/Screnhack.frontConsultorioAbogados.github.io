@@ -6,7 +6,7 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.xpath('/html/body/app-root/section/app-home/div[1]/div/h1/span[1]')).getText() as Promise<string>;
+    return element(by.xpath('/html/body/app-root/section/app-home/div[1]/div/h1')).getText() as Promise<string>;
   }
 
   getBotonGestion() {

@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ConsultaService {
-  private url: string = 'http://localhost:9999/api/';
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
   constructor(
@@ -31,7 +30,6 @@ export class ConsultaService {
   }
 
   public putCrearConsultaAbogado(consulta: Consulta): Observable<Consulta> {
-    console.log("llego a actualizar");
     return this.http.put<Consulta>(`${environment.url}comando/abogado`, consulta, { headers: this.httpHeaders });
   }
 }
